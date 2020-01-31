@@ -94,6 +94,8 @@ public class ControlPanel extends AppCompatActivity {
                         return true;
                     }
                 });
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,
+                MainFragment.newInstance()).commit();
     }
 
     @Override

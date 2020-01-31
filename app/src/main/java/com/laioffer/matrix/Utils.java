@@ -2,6 +2,7 @@
 package com.laioffer.matrix;
 
 import org.apache.commons.codec.binary.Hex;
+//import org.bouncycastle.util.encoders.Hex;
 
 import java.nio.charset.Charset;
 import java.security.MessageDigest;
@@ -22,7 +23,10 @@ public class Utils {
             messageDigest.reset();
             messageDigest.update(input.getBytes(Charset.forName("UTF8")));
             byte[] resultByte = messageDigest.digest();
-            result = Hex.encodeHexString(resultByte);
+//            result = Hex.encodeHexString(resultByte);
+            ///try to fix but didn't work
+//            result = Hex.encodeHex(resultByte).toString();
+            result = new String(Hex.encodeHex(resultByte));
         }catch(Exception ex){
             ex.printStackTrace();
         }
